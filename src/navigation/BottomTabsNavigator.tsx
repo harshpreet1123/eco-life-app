@@ -3,8 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import FeedScreen from "../screens/FeedScreen";
 import ProfileScreen from "../screens/ProfileScreen";
-import QuickActions from "../screens/QuickActions";
 import Home from "../screens/Home";
+import ChallengesScreen from "../screens/Challenges";
 
 const Tab = createBottomTabNavigator();
 
@@ -46,7 +46,7 @@ const BottomTabsNavigator: React.FC = () => {
       />
       <Tab.Screen
         name="Quick Actions"
-        component={QuickActions}
+        component={ChallengesScreen}
         options={{ headerShown: false }}
       />
       <Tab.Screen

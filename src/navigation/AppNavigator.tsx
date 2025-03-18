@@ -13,6 +13,7 @@ import DailySustainabilityTracker from "../screens/DailySustainbilityScoreTracke
 import RandomActOfKindness from "../screens/RandomActOfKindness";
 import BottomTabsNavigator from "./BottomTabsNavigator";
 import SettingsScreen from "../screens/SettingsScreen";
+import ChallengesScreen from "../screens/Challenges";
 
 const Stack = createStackNavigator();
 
@@ -44,6 +45,7 @@ const AppNavigator: React.FC = () => {
         component={RandomActOfKindness}
       />
       <Stack.Screen name="MainTabs" component={BottomTabsNavigator} />
+      <Stack.Screen name="Challenges" component={ChallengesScreen} />
     </Stack.Navigator>
   );
 };

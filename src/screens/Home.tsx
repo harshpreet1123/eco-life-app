@@ -15,6 +15,7 @@ import {
   FontAwesome,
   Feather,
   AntDesign,
+  SimpleLineIcons,
 } from "@expo/vector-icons";
 import StaggeredList from "@mindinventory/react-native-stagger-view";
 
@@ -84,6 +85,14 @@ const Home: React.FC = ({ navigation }) => {
       height: 200,
       colors: ["#386641", "#6A994E"], // Dark Leaf Green to Fresh Green
       route: "DailySustainabilityTracker",
+    },
+    {
+      id: 9,
+      title: "Challenges",
+      icon: <SimpleLineIcons name="trophy" size={32} color="#fff" />,
+      height: 200,
+      colors: ["#386641", "#6A994E"], // Dark Leaf Green to Fresh Green
+      route: "PreChallenges",
     },
   ];
 
@@ -235,15 +244,15 @@ const Home: React.FC = ({ navigation }) => {
         <Text style={styles.sectionTitle}>Leaderboard</Text>
         <View style={styles.leaderboardList}>
           <View style={styles.leaderboardItem}>
-            <AntDesign name="trophy" size={20} color="#FFD700" />
+            <SimpleLineIcons name="trophy" size={20} color="#FFD700" />
             <Text style={styles.leaderboardText}>1. EcoWarrior123</Text>
           </View>
           <View style={styles.leaderboardItem}>
-            <AntDesign name="trophy" size={20} color="#C0C0C0" />
+            <SimpleLineIcons name="trophy" size={20} color="#C0C0C0" />
             <Text style={styles.leaderboardText}>2. GreenHero</Text>
           </View>
           <View style={styles.leaderboardItem}>
-            <AntDesign name="trophy" size={20} color="#CD7F32" />
+            <SimpleLineIcons name="trophy" size={20} color="#CD7F32" />
             <Text style={styles.leaderboardText}>3. NatureLover</Text>
           </View>
         </View>

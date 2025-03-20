@@ -11,20 +11,22 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { Button } from "react-native-elements";
 
-const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
+const Signup: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleLogin = () => {
-    // Handle login logic
-    console.log("Logging in with:", email, password);
-    // Navigate to the next screen after login
+  const handleSignup = () => {
+    // Handle signup logic
+    console.log("Signing up with:", email, password);
+    // Navigate to the next screen after signup
     navigation.navigate("MainTabs");
   };
 
   return (
     <ImageBackground
-      source={require("../../assets/images/login-bg.jpeg")} // Add a background image
+      source={require("../../assets/images/signup-bg.jpeg")} // Add a background image
       style={styles.background}
     >
       {/* Gradient Overlay */}
@@ -33,8 +35,8 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
         style={styles.gradient}
       >
         <View style={styles.container}>
-          <Text style={styles.title}>Welcome Back</Text>
-          <Text style={styles.subtitle}>Sign in to continue</Text>
+          <Text style={styles.title}>Create Account</Text>
+          <Text style={styles.subtitle}>Sign up to get started</Text>
 
           {/* Email Input */}
           <TextInput
@@ -47,6 +49,17 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
             autoCapitalize="none"
           />
 
+          {/* Name Input */}
+          <TextInput
+            placeholder="Name"
+            placeholderTextColor="#999"
+            value={name}
+            onChangeText={setName}
+            style={styles.input}
+            keyboardType="default"
+            autoCapitalize="none"
+          />
+
           {/* Password Input */}
           <TextInput
             placeholder="Password"
@@ -56,36 +69,29 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
             style={styles.input}
             secureTextEntry
           />
-          <TouchableOpacity
-            style={{
-              justifyContent: "flex-end",
-              alignItems: "flex-end",
-              flex: 1,
-              width: "100%",
-              marginTop: 10,
-              marginBottom: 20,
-            }}
-            onPress={() => {
-              navigation.navigate("ForgotPassword");
-            }}
-          >
-            <Text style={{ ...styles.signupLink, textAlign: "right" }}>
-              Forgot Password
-            </Text>
-          </TouchableOpacity>
 
-          {/* Login Button */}
+          {/* Confirm Password Input */}
+          <TextInput
+            placeholder="Confirm Password"
+            placeholderTextColor="#999"
+            value={confirmPassword}
+            onChangeText={setConfirmPassword}
+            style={styles.input}
+            secureTextEntry
+          />
+
+          {/* Signup Button */}
           <Button
-            title="Login"
-            onPress={handleLogin}
+            title="Sign Up"
+            onPress={handleSignup}
             buttonStyle={styles.button}
           />
 
-          {/* Signup Link */}
-          <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
+          {/* Login Link */}
+          <TouchableOpacity onPress={() => navigation.pop()}>
             <Text style={styles.signupText}>
-              Don't have an account?{" "}
-              <Text style={styles.signupLink}>Sign up</Text>
+              Already have an account?{" "}
+              <Text style={styles.signupLink}>Login</Text>
             </Text>
           </TouchableOpacity>
         </View>
@@ -149,4 +155,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Signup;

@@ -1,4 +1,4 @@
-const dailySustainbilityQuestions = [
+export const dailySustainbilityQuestions = [
   {
     question: "How did you commute today?",
     type: "multipleChoice",

@@ -14,6 +14,11 @@ import RandomActOfKindness from "../screens/RandomActOfKindness";
 import BottomTabsNavigator from "./BottomTabsNavigator";
 import SettingsScreen from "../screens/SettingsScreen";
 import ChallengesScreen from "../screens/Challenges";
+import ForgotPassword from "../screens/ForgotPassword";
+import Signup from "../screens/Signup";
+import PredefinedChallenges from "../screens/predChallenges";
+import ChallengeDetails from "../screens/ChallengeDetail";
+import ProductDetailScreen from "../screens/ProductDetails";
 
 const Stack = createStackNavigator();
 
@@ -36,6 +41,8 @@ const AppNavigator: React.FC = () => {
       <Stack.Screen name="EcoTravel" component={EcoTravelPlanner} />
       <Stack.Screen name="DietPlanner" component={SustainableDietPlanner} />
       <Stack.Screen name="Settings" component={SettingsScreen} />
+      <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
+      <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen
         name="DailySustainabilityTracker"
         component={DailySustainabilityTracker}
@@ -46,6 +53,9 @@ const AppNavigator: React.FC = () => {
       />
       <Stack.Screen name="MainTabs" component={BottomTabsNavigator} />
       <Stack.Screen name="Challenges" component={ChallengesScreen} />
+      <Stack.Screen name="PreChallenges" component={PredefinedChallenges} />
+      <Stack.Screen name="ChallengeDetails" component={ChallengeDetails} />
+      <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
     </Stack.Navigator>
   );
 };

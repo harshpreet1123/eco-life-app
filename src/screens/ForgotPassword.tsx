@@ -11,20 +11,19 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { Button } from "react-native-elements";
 
-const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
+const ForgotPassword: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    // Handle login logic
-    console.log("Logging in with:", email, password);
-    // Navigate to the next screen after login
-    navigation.navigate("MainTabs");
+  const handleResetPassword = () => {
+    // Handle reset password logic
+    console.log("Reset password for:", email);
+    // Navigate back to login after reset
+    navigation.navigate("Login");
   };
 
   return (
     <ImageBackground
-      source={require("../../assets/images/login-bg.jpeg")} // Add a background image
+      source={require("../../assets/images/forgot-password-bg.jpeg")} // Add a background image
       style={styles.background}
     >
       {/* Gradient Overlay */}
@@ -33,8 +32,10 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
         style={styles.gradient}
       >
         <View style={styles.container}>
-          <Text style={styles.title}>Welcome Back</Text>
-          <Text style={styles.subtitle}>Sign in to continue</Text>
+          <Text style={styles.title}>Forgot Password</Text>
+          <Text style={styles.subtitle}>
+            Enter your email to reset your password
+          </Text>
 
           {/* Email Input */}
           <TextInput
@@ -47,45 +48,18 @@ const Login: React.FC<{ navigation: any }> = ({ navigation }) => {
             autoCapitalize="none"
           />
 
-          {/* Password Input */}
-          <TextInput
-            placeholder="Password"
-            placeholderTextColor="#999"
-            value={password}
-            onChangeText={setPassword}
-            style={styles.input}
-            secureTextEntry
-          />
-          <TouchableOpacity
-            style={{
-              justifyContent: "flex-end",
-              alignItems: "flex-end",
-              flex: 1,
-              width: "100%",
-              marginTop: 10,
-              marginBottom: 20,
-            }}
-            onPress={() => {
-              navigation.navigate("ForgotPassword");
-            }}
-          >
-            <Text style={{ ...styles.signupLink, textAlign: "right" }}>
-              Forgot Password
-            </Text>
-          </TouchableOpacity>
-
-          {/* Login Button */}
+          {/* Reset Password Button */}
           <Button
-            title="Login"
-            onPress={handleLogin}
+            title="Reset Password"
+            onPress={handleResetPassword}
             buttonStyle={styles.button}
           />
 
-          {/* Signup Link */}
-          <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
+          {/* Back to Login Link */}
+          <TouchableOpacity onPress={() => navigation.pop()}>
             <Text style={styles.signupText}>
-              Don't have an account?{" "}
-              <Text style={styles.signupLink}>Sign up</Text>
+              Remember your password?{" "}
+              <Text style={styles.signupLink}>Login</Text>
             </Text>
           </TouchableOpacity>
         </View>
@@ -149,4 +123,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default ForgotPassword;

@@ -103,7 +103,7 @@ const DailySustainabilityTracker: React.FC = () => {
       )}`;
 
       const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.EXPO_PUBLIC_GEMINI_API_KEY}`,
         {
           contents: [
             {
@@ -128,9 +128,11 @@ const DailySustainabilityTracker: React.FC = () => {
 
       // Parse the JSON response
       const jsonStartIndex = responseText.indexOf("```json") + 7; // Move index past "```json"
-const jsonEndIndex = responseText.lastIndexOf("```");
-const jsonString = responseText.slice(jsonStartIndex, jsonEndIndex).trim(); // Remove whitespace
-const { score, feedback } = JSON.parse(jsonString);
+      const jsonEndIndex = responseText.lastIndexOf("```");
+      const jsonString = responseText
+        .slice(jsonStartIndex, jsonEndIndex)
+        .trim(); // Remove whitespace
+      const { score, feedback } = JSON.parse(jsonString);
       setScore(score);
       setFeedback(feedback);
     } catch (error) {
@@ -159,9 +161,9 @@ const { score, feedback } = JSON.parse(jsonString);
           </Text>
           <Text style={styles.score}>{score}/100</Text>
           <RenderHTML
-                      contentWidth={300} // Adjust based on your layout
-                      source={{ html: feedback }}
-                    />
+            contentWidth={300} // Adjust based on your layout
+            source={{ html: feedback }}
+          />
         </View>
       )}
 

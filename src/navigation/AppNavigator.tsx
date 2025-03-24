@@ -19,6 +19,10 @@ import Signup from "../screens/Signup";
 import PredefinedChallenges from "../screens/predChallenges";
 import ChallengeDetails from "../screens/ChallengeDetail";
 import ProductDetailScreen from "../screens/ProductDetails";
+import GenerateRecipeScreen from "../screens/RecipeMaker";
+import SavedRecipesScreen from "../screens/Recipes";
+import RecipeDetailScreen from "../screens/RecipeDetail";
+import NewsDetailScreen from "../screens/NewsDetail";
 
 const Stack = createStackNavigator();
 
@@ -56,6 +60,10 @@ const AppNavigator: React.FC = () => {
       <Stack.Screen name="PreChallenges" component={PredefinedChallenges} />
       <Stack.Screen name="ChallengeDetails" component={ChallengeDetails} />
       <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
+      <Stack.Screen name="RecipeMaker" component={GenerateRecipeScreen} />
+      <Stack.Screen name="RecipeScreen" component={SavedRecipesScreen} />
+      <Stack.Screen name="RecipeDetail" component={RecipeDetailScreen} />
+      <Stack.Screen name="NewsDetail" component={NewsDetailScreen} />
     </Stack.Navigator>
   );
 };

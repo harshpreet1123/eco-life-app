@@ -37,7 +37,7 @@ const SustainableDietPlanner: React.FC = () => {
         Provide the plan in a well-structured HTML format with emojis to make it engaging. Include meal ideas, snacks, and tips for sustainability. Use <h3> for headings, <ul> and <li> for lists, and <p> for paragraphs.`;
 
       const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`, // Replace with your Gemini API key
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.EXPO_PUBLIC_GEMINI_API_KEY}`, // Replace with your Gemini API key
         {
           contents: [
             {

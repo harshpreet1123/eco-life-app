@@ -18,6 +18,7 @@ import {
   SimpleLineIcons,
 } from "@expo/vector-icons";
 import StaggeredList from "@mindinventory/react-native-stagger-view";
+import EcoNewsSlider from "../components/NewsCard";
 
 const Home: React.FC = ({ navigation }) => {
   // Dummy data for the staggered grid items
@@ -90,9 +91,17 @@ const Home: React.FC = ({ navigation }) => {
       id: 9,
       title: "Challenges",
       icon: <SimpleLineIcons name="trophy" size={32} color="#fff" />,
-      height: 200,
+      height: 160,
       colors: ["#386641", "#6A994E"], // Dark Leaf Green to Fresh Green
       route: "PreChallenges",
+    },
+    {
+      id: 10,
+      title: "Recipes",
+      icon: <MaterialIcons name="food-bank" size={32} color="#fff" />,
+      height: 160,
+      colors: ["#9C6644", "#E9C46A"], // Earthy Brown to Warm Sand
+      route: "RecipeScreen",
     },
   ];
 
@@ -155,6 +164,8 @@ const Home: React.FC = ({ navigation }) => {
         </View>
         <Text style={styles.progressText}>60% completed</Text>
       </View>
+
+      <EcoNewsSlider/>
 
       {/* Tip of the Day */}
       <LinearGradient

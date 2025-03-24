@@ -60,7 +60,7 @@ const EcoTravelPlanner: React.FC = () => {
         sampleJson
       )} on how to travel in an eco-friendly way.`;
       const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`, // Replace with your Gemini API key
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.EXPO_PUBLIC_GEMINI_API_KEY}`, // Replace with your Gemini API key
         {
           contents: [
             {
